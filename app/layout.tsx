@@ -15,7 +15,7 @@ export default function DashboardLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css"
         />
-        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" type="image/png" href="/images/favicon.png" />
       </head>
       <body>
         <Header />
