@@ -26,10 +26,14 @@ export default async function Home() {
     <>
       <div className="square-background mt-20 flex shrink-0 items-center justify-center md:mt-0 md:h-[70vh]">
         <div className="container grid grid-cols-1 md:grid-cols-2">
-          <div className="h-[150px] w-[150px] rounded-[2rem] bg-white md:h-[300px] md:w-[300px]">
-            <Image height={300} width={300} src="/images/pb.png" alt="" />
-          </div>
-
+          <div className="rounded-[2rem] bg-white overflow-hidden h-[150px] w-[150px] md:h-[300px] md:w-[300px]"
+            style={{
+              backgroundImage: "url('/images/pb.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              border: "4px solid rgba(255, 255, 255, 0.2)",
+            }}
+          />
           <div className="mt-10 w-full md:mt-0">
             <p className="text-gradient text-4xl font-extrabold">Hi there,</p>
             <p className="text-xl">
