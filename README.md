@@ -16,7 +16,7 @@ npm run dev
 npm run build
 ```
 
-Then to serve the static files:
+##### Then to serve the static files:
 
 ```bash
 npm run serve
