@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+#
+# One-shot project setup. Idempotent — safe to re-run after a `git pull`.
+#
+# This is the ONLY command a fresh clone needs to run. There are no background
+# dependencies (no database, no broker) — the site is a static Next.js export.
+
+set -euo pipefail
+
+cd "$(dirname "$0")/../.."
+
+echo "==> Using Node version from .nvmrc"
+if command -v nvm >/dev/null 2>&1 || [ -s "${NVM_DIR:-$HOME/.nvm}/nvm.sh" ]; then
+  # shellcheck disable=SC1091
+  . "${NVM_DIR:-$HOME/.nvm}/nvm.sh"
+  nvm install
+  nvm use
+else
+  echo "    nvm not found — skipping. Ensure your Node matches .nvmrc ($(cat .nvmrc))."
+fi
+
+echo "==> Installing dependencies"
+npm install
+
+echo "==> Building shared libs"
+npm run build:libs
+
+echo
+echo "Setup complete. Run ./scripts/dev/start_all to start the site."

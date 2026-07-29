@@ -1,0 +1,23 @@
+{
+  "name": "@portfolio/mocks",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "tsc --noEmit && eslint . --max-warnings=0",
+    "lint:fix": "tsc --noEmit && eslint . --fix --max-warnings=0"
+  },
+  "dependencies": {
+    "@portfolio/types": "*"
+  },
+  "devDependencies": {
+    "@portfolio/eslint-config": "*",
+    "eslint": "9.39.5",
+    "typescript": "5.9.3"
+  }
+}

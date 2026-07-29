@@ -1,25 +1,19 @@
-# <div align="center"><img  src="./public/images/logo.png" width="60"/> </br>My Portfolio</div>
+# <div align="center"><img src="./apps/web/public/images/logo.png" width="60"/> </br>My Portfolio</div>
 
-Demo: [https://gherciu.github.io](https://gherciu.github.io)
+My personal portfolio — a statically exported Next.js site deployed to GitHub Pages at
+[https://gherciu.github.io](https://gherciu.github.io).
 
-## Getting Started
-
-#### Development:
-
-```bash
-npm run dev
-```
-
-#### Production:
+## Local dev
 
 ```bash
-npm run build
+./scripts/dev/setup      # one command: installs everything and builds the shared libs
+./scripts/dev/start_all  # starts the app(s) developed in this repo
 ```
 
-##### Then to serve the static files:
+`setup` handles the entire fresh-clone setup and is idempotent (safe to re-run after a `git pull`).
 
-```bash
-npm run serve
-```
+## Guidelines
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+All engineering conventions and guidelines for this project are covered in the `ai-utils`
+repository, cloned alongside the `@episclera` projects. An AI assistant can find the
+project-structure blueprint at `ai-utils/skills/project-structure/SKILL.md`.

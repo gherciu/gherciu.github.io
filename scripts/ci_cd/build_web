@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#
+# Builds the static site for GitHub Pages. Called by .github/workflows/deploy.yml.
+# Output lands in apps/web/out, which the workflow uploads as the Pages artifact.
+
+set -euo pipefail
+
+cd "$(dirname "$0")/../.."
+
+echo "==> Building shared libs"
+npm run build:libs
+
+echo "==> Building the static site"
+npm run build:web
+
+echo "==> Disabling GitHub Pages Jekyll processing"
+touch apps/web/out/.nojekyll
+
+echo "Build complete: apps/web/out"

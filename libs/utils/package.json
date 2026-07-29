@@ -1,0 +1,24 @@
+{
+  "name": "@portfolio/utils",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "lint": "tsc --noEmit && eslint . --max-warnings=0",
+    "lint:fix": "tsc --noEmit && eslint . --fix --max-warnings=0",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@portfolio/eslint-config": "*",
+    "@types/jest": "30.0.0",
+    "eslint": "9.39.5",
+    "jest": "30.4.2",
+    "ts-jest": "29.4.12",
+    "typescript": "5.9.3"
+  }
+}

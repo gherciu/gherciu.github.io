@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;0,800;1,400&display=swap');
+
+@import 'tailwindcss';
+
+@theme {
+  --font-body: 'JetBrains Mono', monospace;
+  --color-foreground: #111111;
+
+  --animate-text: text 5s ease infinite;
+  --animate-marquee: marquee 45s linear infinite;
+
+  @keyframes text {
+    0%,
+    100% {
+      background-size: 200% 200%;
+      background-position: left center;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: right center;
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/*
+ * Custom utilities are registered with `@utility` rather than as plain classes in
+ * `@layer components` — that is what makes them usable from `@apply` and from variants
+ * (`hover:`, `md:`) in Tailwind v4.
+ */
+
+/* v4 dropped the `container` theme key — recreate the v3 centered, padded container. */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= 40rem) {
+    padding-inline: 3rem;
+  }
+  @media (width >= 64rem) {
+    padding-inline: 4rem;
+  }
+  @media (width >= 80rem) {
+    padding-inline: 5rem;
+  }
+  @media (width >= 96rem) {
+    padding-inline: 6rem;
+  }
+}
+
+@utility text-gradient {
+  @apply animate-text bg-linear-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent;
+}
+
+@utility square-background {
+  background-image:
+    linear-gradient(#151515 1px, transparent 1px),
+    linear-gradient(to right, #151515 1px, transparent 1px);
+  background-size: 100px 100px;
+}
+
+/* Skills rail — fades out at both edges so the list reads as continuing off-screen. */
+@utility fade-x {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 4rem,
+    black calc(100% - 4rem),
+    transparent 100%
+  );
+}
+
+/* Continuous marquee. Duplicated track + 50% travel = seamless loop. */
+@utility marquee-track {
+  animation: var(--animate-marquee);
+  &:hover {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@layer base {
+  body {
+    overflow-x: hidden;
+    font-family: var(--font-body);
+    color: white;
+    background-color: black;
+    font-weight: 600;
+  }
+  h2 {
+    @apply text-4xl;
+  }
+  a {
+    @apply text-gradient decoration-purple-600;
+  }
+  a:hover {
+    @apply underline decoration-2;
+  }
+}

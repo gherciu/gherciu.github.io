@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+# Starts the app(s) developed in this repo. Background dependencies (there are none
+# for this project) are brought up by ./scripts/dev/setup, not here.
+
+set -euo pipefail
+
+cd "$(dirname "$0")/../.."
+
+npm run dev:web
