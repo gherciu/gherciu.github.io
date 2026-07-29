@@ -4,16 +4,16 @@ export const projects: Project[] = [
   {
     name: 'PortQueue',
     description:
-      'A distributed queue implementation that is database agnostic and scales horizontally without a dedicated broker — plug in the storage you already run and add workers as load grows.',
-    tags: ['Distributed', 'Database agnostic', 'Scalable'],
+      'A horizontally scalable job queue that runs on the database you already have. No broker to deploy, no extra service to babysit — point it at your storage and add workers and instances as load grows.',
+    tags: ['Horizontally scalable', 'Database agnostic', 'Broker-free'],
     url: 'https://episclera.github.io/portqueue',
     githubRepository: 'episclera/portqueue',
   },
   {
     name: 'Episclera',
     description:
-      'A company building distributed systems — designing and operating the infrastructure, queues, and services that keep high-throughput products running.',
-    tags: ['Distributed systems', 'Infrastructure', 'Open source'],
+      'An organization building the unglamorous pieces — queues, infrastructure, and services that products lean on when traffic stops being polite. The kind of tooling you install once and stop thinking about.',
+    tags: ['Scalable systems', 'Infrastructure', 'Open source'],
     url: 'https://episclera.github.io',
   },
 ]

@@ -11,7 +11,7 @@ export default async function Home() {
   return (
     <>
       <div className="flex shrink-0 items-center justify-center square-background py-14 md:min-h-[60vh] md:py-0">
-        <div className="container grid grid-cols-1 items-center gap-10 md:grid-cols-2">
+        <div className="container flex flex-col gap-10 md:flex-row md:items-center md:justify-center md:gap-14">
           <div
             className="h-[150px] w-[150px] shrink-0 overflow-hidden rounded-[2rem] bg-white md:h-[300px] md:w-[300px]"
             style={{
@@ -21,12 +21,11 @@ export default async function Home() {
               border: '4px solid rgba(255, 255, 255, 0.2)',
             }}
           />
-          <div className="w-full">
+          <div className="w-full md:max-w-lg">
             <p className="text-gradient text-4xl font-extrabold">Hi there,</p>
             <p className="mt-4 text-xl">
-              my name is Gheorghe. I love technology and always want to be up to date with the
-              latest advancements.
-              <br /> <br /> At the moment I&apos;m working on my open-source projects.
+              my name is Gheorghe. I build scalable systems and enjoy trying out new things along
+              the way.
             </p>
             <div className="mt-7 flex space-x-8">
               <IconButton target="_blank" href="https://github.com/gherciu" aria-label="GitHub">
@@ -47,7 +46,7 @@ export default async function Home() {
         </div>
       </div>
 
-      <Section title="Projects" subTitle="What I'm Building">
+      <Section className="mt-8 md:mt-10" title="Projects" subTitle="What I'm Building">
         <div className="container">
           <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
             {projects.map((project) => (
@@ -60,7 +59,11 @@ export default async function Home() {
       </Section>
 
       {/* Deliberately outside `.container` — the rail's edge fade needs the full viewport width. */}
-      <Section title="Skills" subTitle="Recent Technologies I've Been Using">
+      <Section
+        className="mt-24 md:mt-32"
+        title="Skills"
+        subTitle="Recent Technologies I've Been Using"
+      >
         <SkillsRail />
       </Section>
     </>

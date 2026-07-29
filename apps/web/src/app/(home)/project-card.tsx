@@ -12,7 +12,18 @@ export default async function ProjectCard({ project }: { project: Project }) {
   return (
     <Card className="group flex h-full flex-col transition duration-300 hover:border-neutral-500">
       <div className="flex items-start justify-between gap-4">
-        <h3 className="text-xl font-bold">{project.name}</h3>
+        {/* The global `a` style paints links with a transparent, gradient-clipped colour —
+            `bg-none text-white` opts the heading back out so it keeps the card's title look. */}
+        <h3 className="text-xl font-bold">
+          <Link
+            target="_blank"
+            rel="noreferrer"
+            href={project.url}
+            className="bg-none text-white decoration-purple-600"
+          >
+            {project.name}
+          </Link>
+        </h3>
         {stars !== undefined && (
           <p
             className="flex shrink-0 items-center gap-1 text-sm text-gray-400"
