@@ -6,7 +6,7 @@ export const projects: Project[] = [
     description:
       'An organization building the unglamorous pieces — queues, infrastructure, and services that products lean on when traffic stops being polite. The kind of tooling you install once and stop thinking about.',
     tags: ['Scalable systems', 'Infrastructure', 'Open source'],
-    url: 'https://episclera.github.io',
+    url: 'https://github.com/episclera',
   },
   {
     name: 'PortQueue',
