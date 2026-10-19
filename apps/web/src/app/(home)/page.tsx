@@ -5,7 +5,6 @@ import { projects } from '@/constants/projects'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { HiMail } from 'react-icons/hi'
 import ProjectCard from './project-card'
-import SkillsRail from './skills-rail'
 
 export default async function Home() {
   return (
@@ -56,15 +55,6 @@ export default async function Home() {
             ))}
           </div>
         </div>
-      </Section>
-
-      {/* Deliberately outside `.container` — the rail's edge fade needs the full viewport width. */}
-      <Section
-        className="mt-24 md:mt-32"
-        title="Skills"
-        subTitle="Recent Technologies I've Been Using"
-      >
-        <SkillsRail />
       </Section>
     </>
   )

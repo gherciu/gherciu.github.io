@@ -7,7 +7,6 @@
   --color-foreground: #111111;
 
   --animate-text: text 5s ease infinite;
-  --animate-marquee: marquee 45s linear infinite;
 
   @keyframes text {
     0%,
@@ -18,15 +17,6 @@
     50% {
       background-size: 200% 200%;
       background-position: right center;
-    }
-  }
-
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
     }
   }
 }
@@ -64,28 +54,6 @@
     linear-gradient(#151515 1px, transparent 1px),
     linear-gradient(to right, #151515 1px, transparent 1px);
   background-size: 100px 100px;
-}
-
-/* Skills rail — fades out at both edges so the list reads as continuing off-screen. */
-@utility fade-x {
-  mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    black 4rem,
-    black calc(100% - 4rem),
-    transparent 100%
-  );
-}
-
-/* Continuous marquee. Duplicated track + 50% travel = seamless loop. */
-@utility marquee-track {
-  animation: var(--animate-marquee);
-  &:hover {
-    animation-play-state: paused;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  }
 }
 
 @layer base {
